@@ -125,7 +125,23 @@ class  pr003 {
 		for(i8=0;(char)System.in.read()!='S';i8++){
 			System.out.println("Иттерация № " + i8);
 		}
+		
 
+		for(i8 = 0; i8 < 10;){
+			System.out.println("Иттерация № " + i8);
+			i8++;
+		}
 
+		for(; i8 < 20;){
+                        System.out.println("Иттерация № " + i8);
+                        i8++;
+                }
+		
+		//Бесконечный цикл
+		//for(;;);
+		
+		int sum = 0;
+		for(i8 = 1; i8 <= 5;sum+=i8++);
+		System.out.println("Сумма чисел равна: " + sum);
 	}
 }
