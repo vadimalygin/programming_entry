@@ -190,7 +190,7 @@ class  pr003 {
 			}
                 }
 		
-		//break c dkj;tysvb wbrkfvb
+		//break c вложенными циклами
 		//
 		for(int i10 = 0; i10<3;i10++){
 			System.out.println("Внешний цикл: " + i10);
@@ -203,5 +203,66 @@ class  pr003 {
 			}
 			System.out.println();
 		}
+
+		// Использование оператора брейк с меткой
+		//
+
+		for (int i9 = 1; i9<4; i9++){
+one:			{ 
+two:				{
+three:					{
+						System.out.println("\n i9 = " + i9);
+						if(i9 == 1) break one;
+						if(i9 == 2) break two;
+						if(i9 == 3) break three;
+						System.out.println("Окончание цикла");
+					}
+					System.out.println("После блока three");
+				}
+				System.out.println("После блока two");
+			}
+			System.out.println("После блока one");
+		}
+		System.out.println("После цикла фор с метками");
+
+		//второй пример
+		//
+done:		{
+			for(int i9 = 0; i9<10; i9++){
+				for(int j9 = 0; j9<10; j9++){
+					for(int k9 = 0; k9<10; k9++){
+						System.out.println(k9 + " ");
+                        			if (k9 == 5) break done;
+					}
+					System.out.println("После k9");
+                        	}
+				System.out.println("После j9");
+			}
+			System.out.println("После i9");
+		}
+
+		System.out.println("\n");
+
+		//третий пример
+		//
+stop1:		for(int i9 = 0; i9<5; i9++){
+			for(int j9 = 0; j9<5; j9++){
+				if(j9 == 2) break stop1;
+				System.out.println("i9 = " + i9 + " j9 = "+ j9);
+			}	
+		}
+		System.out.println("\n");
+
+		for(int i9 = 0; i9<5; i9++){
+stop2:			for(int j9 = 0; j9<5; j9++){
+                                if(j9 == 2) break stop2;
+                                System.out.println("i9 = " + i9 + " j9 = "+ j9);
+                        }
+                }
+
+		//continue
+		//
+		System.out.println("\n");
+		
 	}
 }
