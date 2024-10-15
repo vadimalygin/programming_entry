@@ -123,5 +123,26 @@ class arrays {
 			System.out.println();
 		}
 
+		System.out.println("\nPointers to arrays:");
+		for(i = 0; i < 10; i++){
+			sample[i] = i;
+			sample1[i] = -i;
+			System.out.println(sample[i] + " " + sample1[i]);
+		}
+		System.out.println("sample = " + sample + " sample1 = " + sample1);
+		//sample1 = sample;
+		System.out.println("sample = " + sample + " sample1 = " + sample1 + '\n');
+
+		System.out.println("\nCopying of arrays:");
+		if(sample1.length >= sample.length){
+			for(i = 0; i < sample.length; i++){
+                        	System.out.print("Before copying: sample1[" + i + "] = " + sample1[i] + " sample2[" + i + "] = " + sample[i]);
+                       		sample[i] = sample1[i];
+                        	System.out.println(" After copying:  sample1[" + i + "] = " + sample1[i] + " sample2[" + i + "] = " +sample[i]);
+
+	                }
+
+		}
+
 	}
 } 
