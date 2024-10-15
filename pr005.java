@@ -1,4 +1,5 @@
 // Массивы и строки
+// 
 //
 class arrays {
 	public static void main(String args[]){
@@ -44,7 +45,38 @@ class arrays {
                         if (sample2[i] < min) min = sample2[i];
                         if (sample2[i] > max) max = sample2[i];
                 }
+
                 System.out.println("min = " + min + " max = " + max);
+		//Пузырьковая сортировка
+		
+		int size = sample2.length;
+		int a, b, t;
+
+		//Исходный массив
+		System.out.print("Unsorted array: ");
+		for(i = 0; i<size ; i++){
+			System.out.print(sample2[i] + " ");
+		} 
+		System.out.println();
+
+		//Sorting
+		//
+		for(a = 1; a < size; a++){
+			for(b = size - 1; b >= a; b--){
+				if(sample2[b-1]>sample2[b]){
+					t = sample2[b-1];
+					sample2[b-1] = sample2[b];
+					sample2[b] = t;
+				}
+			}
+		}
+
+		//Sorted array
+                System.out.print("Sorted array: ");
+                for(i = 0; i<size ; i++){
+                        System.out.print(sample2[i] + " ");
+                }
+                System.out.println();
 
 		
 	}
