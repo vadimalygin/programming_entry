@@ -77,7 +77,51 @@ class arrays {
                         System.out.print(sample2[i] + " ");
                 }
                 System.out.println();
+		System.out.println();
 
+		//2D arraays
+		//
+		int[][] arr2d = new int [10][20];
+		int row, col;
+
+		for (row = 0; row < 10; row++){
+			for (col = 0; col < 20; col++){
+				arr2d[row][col] = row * 100 + col + 1;
+				System.out.print(arr2d[row][col] + " ");
+				if(row == 0){
+					if(arr2d[row][col]<10){
+						System.out.print(" ");
+					}
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
+
+		System.out.println("\nNumber of passengers per weekday in time:");
+
+		int[][] arrivals = new int[7][];
+		arrivals[0] = new int[10];
+		arrivals[1] = new int[10];
+		arrivals[2] = new int[10];
+		arrivals[3] = new int[10];
+		arrivals[4] = new int[10];
+		arrivals[5] = new int[2];
+		arrivals[6] = new int[2];
 		
+		int weekday, time;	
+		for(weekday = 0; weekday < 7; weekday++){
+			if(weekday<5){
+				System.out.print("On working days: ");
+			}else{
+				System.out.print("On weekend days: ");
+			}
+			for(time = 0; time < arrivals[weekday].length; time++){
+				arrivals[weekday][time] = weekday + time + 10;
+				System.out.print(arrivals[weekday][time] + " ");
+			}
+			System.out.println();
+		}
+
 	}
 } 
