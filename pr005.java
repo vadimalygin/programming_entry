@@ -143,6 +143,154 @@ class arrays {
 	                }
 
 		}
+		
 
+		System.out.println("\nCycle for-each");
+		int summ = 0;
+		for (i = 0 ; i < 10; i++){
+			summ += sample2[i];
+		}
+		System.out.println(summ);
+		summ = 0; 
+		for (int x : sample2){
+                        System.out.println("x value: " + x);
+			summ += x;
+                }
+                System.out.println(summ + '\n');
+
+		System.out.println("\nCycle for-each for 2d-arrays");
+		summ = 0;
+		int val = 22;
+		boolean found = false;
+		for(int[] x : arrivals){
+			System.out.println("\nNew row");
+			for (int y : x){
+				if (y == val){
+					found = true;
+					break;
+				}
+				System.out.println("y value: " + y);
+				summ += y;
+			}
+		}
+		System.out.println("\nSumm: " + summ);
+		if(found) System.out.println("val = " + val + " was found");
+
+		System.out.println("\nWorking with strings");
+
+                String str1 = new String("string12");
+                String str2 = "string  ";
+                String str3 = new String(str2);
+                String str4 = new String(str2);
+                
+		System.out.println("\nExperementing with strings as pointers");
+                str3 = str2;
+                System.out.println(str3 + " " + str2);
+		if (str3 == str2){
+			System.out.println("Pointers point to same object");
+		}
+                str2 = "New string 2, string instead of str2";
+		if (str3 == str2){
+                        System.out.println("Pointers point to same object");
+                }else {
+			System.out.println("Pointers do not point to same object");
+		}
+                System.out.println(str3 + " " + str2);
+
+                System.out.println("\nMethods of 'String' class\nComparing strings");
+
+                if (str1.equals(str2))
+                        System.out.println("Strings str1 and str2 are equal\n");
+                else
+                        System.out.println("Strings str1 and str2 are not equal\n");
+  
+                if (str3.equals(str4))
+                        System.out.println("Strings str3 and str4 are equal\n");
+                else
+                        System.out.println("Strings str3 and str4 are not equal\n");
+		if (str1 == str2) System.out.println("Strings str1 and str2 are equal by adress ('==')\n");
+		else System.out.println("Strings str1 and str2 are not equal by adress ('==')\n");
+
+                int result;
+                result = str1.compareTo(str3);
+                System.out.println("Result of comparing strings\nstr1 = " + str1 + "\nstr3 = " + str3 + "\nstr1.compareTo(str3) = " + result);
+		
+		//System.out.println("abc".compareTo("abb"));
+		//System.out.println((int)('1' - ' '));	
+		
+		System.out.println("\nEvaluating string's length");
+		System.out.println("\nstr1.length() = " + str1.length());
+		System.out.println("\n\nReturning a symbol by index:");
+		System.out.println("\nstr1.charAt(0) = " + str1.charAt(0) + '\n' + (int)(str1.charAt(1)));
+
+		char ch;
+		for (i = 0; i<str1.length(); i++){
+			System.out.print(str1.charAt(i));
+		}
+		
+		System.out.println("\n\nReturning substring's starting index");	
+                System.out.println("First entrance of substring 'ring' in str2: " + str2.indexOf("ring"));
+		System.out.println("Last entrance of substring 'ring' in str2: " + str2.lastIndexOf("ring"));
+
+		System.out.println("\nString arrays");
+		String[] strs = {"Elements" ,"of" ,"string" ,"array" ,"example"} ;
+		System.out.println("Starting array: ");
+		for(String s : strs){
+			System.out.print(s + ' ');
+		}
+		System.out.println('\n');
+
+		strs[2] = "changed string";
+		strs[4] = "for another example";
+
+		System.out.println("Resulting array: ");
+                for(String s : strs){
+                        System.out.print(s + " ");
+                }
+                System.out.println('\n');
+
+		System.out.println("\nUsing substrings");
+		str2 = "";
+		str2 = strs[0] + " " + strs[1] + " " + strs[2] + " " + strs[3] + " " + strs[4];
+		System.out.println("String str2: " + str2);
+		String subs = str2.substring(9, 32);
+		System.out.println("String str2 = " + str2 + "\nSubstring subs = " + subs);
+	
+		System.out.println("\nSwitch using strings");
+
+		String command = "disconnect";
+		switch (command) {
+			case "connect":
+				System.out.println("Connecting...");
+				break;
+			case "cancel":
+				System.out.println("Cancelling...");
+				break;
+			case "disconnect":
+                                System.out.println("Disconnecting...");
+                                break;
+			default:
+                                System.out.println("Invalid command");
+                                break;
+		}
+		
+		System.out.println("\nText blocks");
+		String str5 = 
+			"""
+			Just text 
+
+			Sticking out your gyatt for the rizzler
+			You're so skibidi
+			You're so fanum tax
+			I just wanna be your sigma
+
+			""";
+		System.out.println("Text block str5: " + str5);
+
+		System.out.println("\ncmd Arguments");
+		System.out.println("Programme sent " + args.length + " arguments\nArguments list");
+		for (String s : args){
+			System.out.println(s);
+		}
 	}
 } 
