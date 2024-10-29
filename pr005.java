@@ -292,5 +292,29 @@ class arrays {
 		for (String s : args){
 			System.out.println(s);
 		}
+
+		System.out.println("\nSearching for string in a list");
+		String[][] nums = {
+			{"Hospital", "269-55-55"},
+			{"Power supply", "285-13-07"},
+			{"Household maintenance", "206-57-93"},
+			{"Energetics company", "313-13-13"}
+		};
+
+		if (args.length != 1){
+			System.out.println("\n Too many arguments. Expected 1");
+		}else {
+			for (i = 0; i < nums.length; i++){
+				if (nums[i][0].equals(args[0])){
+					System.out.println(nums[i][0] + ": " + nums[i][1]);
+					break;
+				}
+			}
+		     	if (i == nums.length){
+		       		System.out.println("String not found");		
+		      	}	
+		}
+		
+
 	}
 } 
