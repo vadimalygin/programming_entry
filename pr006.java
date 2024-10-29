@@ -53,5 +53,42 @@ class pr006{
                         decr_msg += (char)(encr_msg.charAt(i)^key);
                 }
                 System.out.println("Decrypted message: " + decr_msg);
+
+		System.out.println("\nBitwise negation (with 'not' '~')");
+		val = -34;
+		for (i = 128; i > 0; i/=2){
+			if((val & i) != 0) {System.out.print('1');}
+			else {System.out.print('0');}
+		}
+		System.out.println();
+		val = (byte) ~val;
+                for (i = 128; i > 0; i/=2){
+                        if((val & i) != 0) {System.out.print('1');}
+                        else {System.out.print('0');}
+                }
+                System.out.println();
+
+		System.out.println("\n\nBit shifting");
+		System.out.println("\nBit shifting");
+
+		int v = 1;
+		for (int j = 0; j < 8; j++){
+			for (i = 128; i > 0; i/=2){
+                        	if((v & i) != 0) {System.out.print('1');}
+                        	else {System.out.print('0');}
+                	}
+                	System.out.println(" " + v);
+			v = v << 1;
+		}
+
+		v = 128;
+		for (int j = 0; j < 8; j++){
+                        for (i = 128; i > 0; i/=2){
+                                if((v & i) != 0) {System.out.print('1');}
+                                else {System.out.print('0');}
+                        }
+                        System.out.println(" " + v);
+                        v = v >> 1;
+                }
 	}
 }
