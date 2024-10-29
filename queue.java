@@ -2,13 +2,13 @@ class queue {
 	private char[] q;
 	private int getloc, putloc; //pointers for elements of a queue
 	
-	queue (int size){
+	public queue (int size){
 		q = new char[size];
 		putloc = getloc = 0;
 	}
 
 	//Method for putting an element in a queue
-	void put(char ch){
+	public void put(char ch){
 		if (putloc == q.length){
 			System.out.println("Queue overflow. Can't put an element");
 			return;
@@ -17,7 +17,7 @@ class queue {
 	}
 
 	//Method for getting an element from queue
-	char get(){
+	public char get(){
 		if(getloc == putloc){
 			System.out.println("Empty queue. Can't get an element");
 			return ((char) 0) ;
@@ -67,6 +67,8 @@ class QueueMain {
                                 break;
                         }
                 }
-
+		
+		//big.q[3] = 'e';	//would not compile in this version due to privacy
+		//big.putloc = 50; 	//would not compile in this version due to privacy
 	}
 }
