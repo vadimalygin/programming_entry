@@ -314,7 +314,7 @@ class arrays {
 		       		System.out.println("String not found");		
 		      	}	
 		}
+			
 		
-
 	}
 } 
