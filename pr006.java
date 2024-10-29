@@ -90,5 +90,15 @@ class pr006{
                         System.out.println(" " + v);
                         v = v >> 1;
                 }
+
+		System.out.println("\n\n? operand");
+		// bool ? [commands1] : [commands2]
+		int a = -25, b = a < 0 ? -a : a; //abs
+		
+		int result; 
+		for (i = -5; i < 6; i++){
+			result = i != 0 ? 100/i : 0; //eliminating zero-division error
+			if (i != 0) 	{System.out.println("100 / " + i + " equals " + result);}
+		}
 	}
 }
