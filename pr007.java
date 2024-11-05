@@ -158,6 +158,44 @@ class Overload_2_Empire_Strikes_Back {
         }
 }
 
+class Overload_3_Return_of_the_Jedi {
+	int x;
+
+	Overload_3_Return_of_the_Jedi(){
+		System.out.println("No parameters");
+		x = 0;
+	}
+
+	Overload_3_Return_of_the_Jedi(int a){
+                 System.out.println("One integer parameter");
+                 x = a;
+        }
+
+	Overload_3_Return_of_the_Jedi(double d){
+                 System.out.println("One double parameter");
+                 x = (int)(d);
+	}
+
+	Overload_3_Return_of_the_Jedi(int a, int b){
+		System.out.println("Two integer parameters");
+                x = a*b;
+        }
+}
+
+class Summation {
+	int sum;
+
+	Summation (int num) {
+		sum = 0;
+		for(int i = 1; i<= num; i++)
+			sum += i;
+	}
+
+	Summation (Summation ob) {
+		sum = ob.sum;
+	}
+}
+
 public class pr007 {
 	public static void main(String args[]){
 		Mod ob = new Mod();
@@ -254,10 +292,10 @@ public class pr007 {
 		
 		Overload_2_Empire_Strikes_Back ob7 = new Overload_2_Empire_Strikes_Back();
 		int valI = 10;
-		double valD = 10.1;
-		byte valB = 99;
-		short valS = 12;
-		float valF = 11.5F;
+		double valD = 11.0;
+		byte valB = 12;
+		short valS = 13;
+		float valF = 14.0F;
 
 		System.out.println("\nTrying int: ");
 		ob7.f(valI);
@@ -269,6 +307,26 @@ public class pr007 {
 		ob7.f(valS);
 		System.out.println("\nTrying float: ");
 		ob7.f(valF);
-			
+		
+		System.out.println("\n\nExample of using object creating method overload");
+
+		Overload_3_Return_of_the_Jedi t1 = new Overload_3_Return_of_the_Jedi();
+		Overload_3_Return_of_the_Jedi t2 = new Overload_3_Return_of_the_Jedi(11);
+		Overload_3_Return_of_the_Jedi t3 = new Overload_3_Return_of_the_Jedi(12.0);
+		Overload_3_Return_of_the_Jedi t4 = new Overload_3_Return_of_the_Jedi(13, 14);
+
+		System.out.println("t1.x = " + t1.x);
+		System.out.println("t2.x = " + t2.x);
+		System.out.println("t3.x = " + t3.x);
+		System.out.println("t4.x = " + t4.x);
+
+		System.out.println("\n\nExample of creating class object with another object of same class");
+		
+		Summation s1 = new Summation(5);
+		Summation s2 = new Summation(s1);
+		
+		System.out.println("s1.sum = " + s1.sum);
+		System.out.println("s2.sum = " + s2.sum);
+	
 	}
 }
