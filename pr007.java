@@ -124,6 +124,40 @@ class ErrorInfo {
 	}
 }
 
+class Overload {
+	void method() {
+		System.out.println("No parameters");
+	}
+
+	void method(int a) {
+		System.out.println("One integer parameter: " + a);
+	}
+
+	int method(int a, int b){
+		System.out.println("Two integer parameters: (" + a + ", " + b + ")");
+		return a + b;
+	}
+
+	double method(double a, double b){
+		System.out.println("Two floating point parameters: (" + a + ", " + b + ")");
+		return a - b;
+	}
+}
+
+class Overload_2_Empire_Strikes_Back {
+	void f(int x){
+		System.out.println("f(int): " + x);
+	}
+
+	void f(double x){
+                System.out.println("f(double): " + x);
+        }
+
+	void f(byte x){
+                System.out.println("f(byte): " + x);
+        }
+}
+
 public class pr007 {
 	public static void main(String args[]){
 		Mod ob = new Mod();
@@ -207,5 +241,34 @@ public class pr007 {
 		System.out.println("Error message|severity  under code '2':  " + e1.msg + " | " + e1.severity);
                 System.out.println("Error message|severity  under code '20': " + e2.msg + " | " + e2.severity);
 
+		System.out.println("\n\nExample of using method overload");
+
+		Overload ob6 = new Overload();
+
+		ob6.method();
+		ob6.method(2);
+		int resI = ob6.method(4, 6); System.out.println("Integer result: " + resI);
+		double resD = ob6.method(5.1, 3.5); System.out.println("Double result:  " + resD);
+
+		System.out.println("\n\nExample of type conversion affecting method overload");
+		
+		Overload_2_Empire_Strikes_Back ob7 = new Overload_2_Empire_Strikes_Back();
+		int valI = 10;
+		double valD = 10.1;
+		byte valB = 99;
+		short valS = 12;
+		float valF = 11.5F;
+
+		System.out.println("\nTrying int: ");
+		ob7.f(valI);
+		System.out.println("\nTrying double: ");
+		ob7.f(valD);
+		System.out.println("\nTrying byte: ");
+		ob7.f(valB);
+		System.out.println("\nTrying short: ");
+		ob7.f(valS);
+		System.out.println("\nTrying float: ");
+		ob7.f(valF);
+			
 	}
 }
