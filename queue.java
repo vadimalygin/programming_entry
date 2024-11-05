@@ -7,6 +7,26 @@ class queue {
 		putloc = getloc = 0;
 	}
 
+	public queue (queue ob) {
+		putloc = ob.putloc;
+		getloc = ob.getloc;
+		q = new char[ob.q.length];
+
+		for (int i = getloc; i < putloc; i++) {
+			q[i] = ob.q[i];
+		}
+	}
+
+	public queue (char[] arr){
+		putloc = 0;
+		getloc = 0;
+		q = new char[arr.length];
+
+		for(int i = 0; i < arr.length; i++) {
+			put(arr[i]);
+		}
+	}
+
 	//Method for putting an element in a queue
 	public void put(char ch){
 		if (putloc == q.length){
@@ -70,5 +90,32 @@ class QueueMain {
 		
 		//big.q[3] = 'e';	//would not compile in this version due to privacy
 		//big.putloc = 50; 	//would not compile in this version due to privacy
+	
+		System.out.println("\n\n Using cnstructor overload");
+		
+		queue q1 = new queue(10);
+		queue q2 = new queue(new char[] {'I', 'v', 'a', 'n'});
+		for (i = 0; i < 10; i++) {
+			q1.put((char)('A' + i));
+		}
+		queue q3 = new queue(q1);
+
+
+		System.out.println("\n\tq1:");
+		for (i = 0; i < 10; i++) {
+                        System.out.print(q1.get() + " ");
+                }
+		System.out.println("\n\tq2:");
+                for (i = 0; i < 4; i++) {
+                        System.out.print(q2.get() + " ");
+                }
+		System.out.println("\n\tq3:");
+                for (i = 0; i < 10; i++) {
+                        System.out.print(q3.get() + " ");
+                }
+
+		System.out.println("\n");
+
+
 	}
 }
