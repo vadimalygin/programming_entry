@@ -327,6 +327,6 @@ public class pr007 {
 		
 		System.out.println("s1.sum = " + s1.sum);
 		System.out.println("s2.sum = " + s2.sum);
-	
+
 	}
 }
