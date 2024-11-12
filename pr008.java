@@ -26,6 +26,20 @@ class StaticVar {
 	}
 }
 
+class StaticBlock{
+	static double root2;
+	static double root3;
+	static {
+		System.out.println("Inside of static block");
+		root2 = Math.sqrt(2.0);
+		root3 = Math.sqrt(3.0);
+	}
+
+	StaticBlock (String msg){
+		System.out.println(msg);
+	}
+}
+
 class pr008{
 	public static void main(String args[]){
 		Factorial f = new Factorial();
@@ -59,6 +73,11 @@ class pr008{
 		StaticVar.y = 100;
 		System.out.println("\nFor y = 100");
                 System.out.println("ob1.sum() = " +  ob1.sum() + " ob2.sum = " + ob2.sum());
-	}
+		
+		System.out.println("\nExample of static class initializing");
 
+		StaticBlock ob3 = new StaticBlock("New instance of 'StaticBlock'");
+		System.out.println("Square root of 2: " + StaticBlock.root2 + "\nSquare root of 3: " + StaticBlock.root3);
+	}
+	
 }
